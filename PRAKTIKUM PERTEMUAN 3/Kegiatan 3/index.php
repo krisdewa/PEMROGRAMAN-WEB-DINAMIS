@@ -13,7 +13,7 @@
     <title> Halaman Utama </title>
 </head>
 <body>
-    <a href="tambah.php"> Tambah Data Baru </a><br /><br />
+    <a href="tambah.php"> Tambah Data Baru </a><br/><br/>
     <table width='80%' border = 1>
         <tr>
             <th>Nim</th>
