@@ -1,11 +1,14 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kegiatan 4</title>
     <style>
         .error {
             color: #FF0000;
         }
-</style>
     </style>
 </head>
 
@@ -25,10 +28,10 @@
             $emailErr = "Email harus diisi";
         } else {
             $email = test_input($_POST["email"]);
-        // check if e-mail address is well-formed
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $emailErr = "Email tidak sesuai format";
-        }
+            // check if e-mail address is well-formed
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $emailErr = "Email tidak sesuai format";
+            }
         }
         if (empty($_POST["website"])) {
             $website = "";
