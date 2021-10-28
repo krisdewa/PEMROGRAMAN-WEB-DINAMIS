@@ -6,8 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Postest 4</title>
     <style>
+        body{
+            background: #A770EF;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+        .wrap{
+            margin: 10px;
+            padding: 10px;
+            background: rgba( 255, 255, 255, 0.35 );
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 20px );
+            -webkit-backdrop-filter: blur( 20px );
+            border-radius: 10px;
+            border: 1px solid rgba( 255, 255, 255, 0.18 );
+        }
         .error {
             color: #FF0000;
+        }
+        .border{
+            border-radius: 5px;
+            padding: 4px;
         }
         .button {
             border: none;
@@ -20,7 +40,7 @@
             margin: 4px 2px;
             transition-duration: 0.4s;
             cursor: pointer;
-            border-radius: 10pt;
+            border-radius: 5pt;
         }
 
         .button1 {
@@ -37,6 +57,7 @@
             font-family: Arial, Helvetica, sans-serif;
             border-collapse: collapse;
             width: 100%;
+            color: black;
         }
 
         #mahasiswa td, #mahasiswa th {
@@ -52,7 +73,7 @@
             padding-top: 12px;
             padding-bottom: 12px;
             text-align: left;
-            background-color: #FF4E34;
+            background-color: #A770EF;
             color: white;
         }
     </style>
@@ -62,8 +83,8 @@
 
 <?php
     // define variables and set to empty values
-    $namaErr = $nimErr = $emailErr = $jnsklmnErr = $nohpErr = $alamatErr = "";
-    $nama = $nim = $email = $jnsklmn = $nohp = $alamat = "";
+    $namaErr = $nimErr = $jurusanErr =  $semesterErr = $emailErr = $tlErr = $jnsklmnErr = $nohpErr = $alamatErr = "";
+    $nama = $nim = $jurusan = $semester = $email= $tl = $jnsklmn = $nohp = $alamat = "";
 
     // Percabangan jika Menerima inputan dari action POST pada FORM inputan
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -82,6 +103,20 @@
         } else { //jika data benar akan memasukkan data nim ke variabel nim untuk dioutput kan
             $nim = test_input($_POST["nim"]);
         }
+        
+        // Validasi jika jurusan kosong maka output kan jenis kelamin harus diisi
+        if (empty($_POST["jurusan"])) {
+            $jurusanErr = "jurusan harus diisi";
+        } else { //jika jurusan terisi akan memasukkan data jurusan ke variabel jurusan untuk dioutput kan
+            $jurusan = test_input($_POST["jurusan"]);
+        }
+
+        // Validasi jika semester kosong maka output kosong
+        if (empty($_POST["semester"])) {
+            $semesterErr = "";
+        } else { //jika semester terisi akan memasukkan data semester ke variabel semester untuk dioutput kan
+            $semester = test_input($_POST["semester"]);
+        }
 
         // Validasi jika email kosong maka output "email harus diisi"
         if (empty($_POST["email"])) {
@@ -93,24 +128,31 @@
             $emailErr = "Email tidak sesuai format"; // jika bukan email maka akan output "Email tidak sesuai format"
         }
 
+        // Validasi jika tanggal lahir kosong maka output kosong
+        if (empty($_POST["tl"])) {
+            $tlErr = "";
+        } else { //jika tanggal lahir terisi akan memasukkan data tanggal lahir ke variabel tanggal lahir untuk dioutput kan
+            $tl = test_input($_POST["tl"]);
+        }
+
         // Validasi jika jenis kelamin kosong maka output jenis kelamin kosong
         if (empty($_POST["jnsklmn"])) {
             $jnsklmnErr = "Jenis kelamin harus diisi";
-        } else { //jika website terisi akan memasukkan data website ke variabel website untuk dioutput kan
+        } else { //jika jeniskelamin terisi akan memasukkan data jeniskelamin ke variabel jeniskelamin untuk dioutput kan
             $jnsklmn = test_input($_POST["jnsklmn"]);
         }
 
         // Validasi jika nohp kosong maka output nohp kosong
         if (empty($_POST["nohp"])) {
             $nohpErr = "NO HP harus diisi";
-        } else { //jika comment terisi akan memasukkan data nohp ke variabel comment untuk dioutput kan
+        } else { //jika nohp terisi akan memasukkan data nohp ke variabel nohp untuk dioutput kan
             $nohp = test_input($_POST["nohp"]);
         }
 
         // Validasi jika alamat kosong maka output "alamat harus diisi"
         if (empty($_POST["alamat"])) { 
             $alamatErr = "Alamat harus diisi";
-        } else { //jika gender terisi akan memasukkan data gender ke variabel gender untuk dioutput kan
+        } else { //jika alamat terisi akan memasukkan data alamat ke variabel alamat untuk dioutput kan
             $alamat = test_input($_POST["alamat"]);
         }
     }
@@ -128,42 +170,63 @@
         $data = htmlspecialchars($data); 
         return $data;
     }
-?>
-
-    <h2>Masukkan Data Mahasiswa </h2>
-    <p><span class="error">* Harus Diisi.</span></p>
+?>  
+    <div class="wrap">
+    <center>
+        <h2>Masukkan Data Mahasiswa </h2>
+        <p><span class="error">* Wajib Diisi Oleh Mahasiswa</span></p>
+    </center>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-        <table>
+    
+        <table align="center">
             <tr>
-                <td>Nama Mahasiswa :</td>
-                <td><input type="text" name="nama">
+                <td>Nama Mahasiswa</td>
+                <td>: <input class="border" type="text" name="nama">
                     <span class="error">* <?php echo $namaErr;?></span>
                 </td>
             </tr>
             <tr>
-                <td>NIM Mahasiswa :</td>
-                <td><input type="number" name="nim">
+                <td>NIM Mahasiswa</td>
+                <td>: <input class="border" type="number" name="nim">
                     <span class="error">* <?php echo $nimErr;?></span>
                 </td>
             </tr>
             <tr>
-                <td>E-mail Mahasiswa : </td>
-                <td><input type="text" name="email">
+                <td>Jurusan </td>
+                <td>: <input class="border" type="text" name="jurusan">
+                    <span class="error">* <?php echo $jurusanErr;?></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Semester</td>
+                <td>: <input class="border" type="number" name="semester">
+                    <span class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>E-mail Mahasiswa</td>
+                <td>: <input class="border" type="text" name="email">
                     <span class="error">* <?php echo $emailErr;?></span>
                 </td>
             </tr>
             <tr>
-                <td>NO HP :</td>
-                <td> <input type="number" name="nohp">
+                <td>Tanggal Lahir</td>
+                <td>: <input class="border" type="date" name="tl">
+                    <span class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>NO HP</td>
+                <td>: <input class="border" type="number" name="nohp">
                     <span class="error">* <?php echo $nohpErr;?></span>
                 </td>
             </tr>
             <tr>
-                <td>Alamat :</td>
-                <td> <textarea name="alamat" rows="5" cols="40"></textarea><span class="error">* <?php echo $alamatErr;?></span></td>
+                <td>Alamat</td>
+                <td> <textarea class="border" name="alamat" rows="5" cols="40"></textarea><span class="error">* <?php echo $alamatErr;?></span></td>
             </tr>
             <tr>
-                <td>Jenis Kelamin :</td>
+                <td>Jenis Kelamin</td>
                 <td>
                     <input type="radio" name="jnsklmn" value="Laki-laki">Laki-Laki
                     <input type="radio" name="jnsklmn" value="Perempuan">Perempuan
@@ -175,14 +238,18 @@
             </td>
         </table>
     </form>
-
+    </div>
 <?php
-    echo "<br><h2>Data mahasiswa yang sudah diisi:</h2>";
+    echo "<div class='wrap'>";
+    echo "<h2>Data mahasiswa yang sudah diisi:</h2>";
     echo "<table id='mahasiswa' border='1' style='width:100%';>
     <tr>
       <th>Nama</th>
       <th>NIM</th>
+      <th>Jurusan</th>
+      <th>Semester</th>
       <th>E-mail</th>
+      <th>Tanggal Lahir</th>
       <th>Jenis Kelamin</th>
       <th>NO HP</th>
       <th>Alamat</th>
@@ -191,12 +258,16 @@
     ";
         echo "<td>", $nama, "</td>";
         echo "<td>", $nim, "</td>";
+        echo "<td>", $jurusan, "</td>";
+        echo "<td>", $semester, "</td>";
         echo "<td>", $email, "</td>";
+        echo "<td>", $tl, "</td>";
         echo "<td>", $jnsklmn, "</td>";
         echo "<td>", $nohp, "</td>";
         echo "<td>", $alamat, "</td>";
     echo "</tr>";
-    echo "</table>";
+    echo "</table> <br>";
+    echo "</div>";
 ?>
 
 </body>
