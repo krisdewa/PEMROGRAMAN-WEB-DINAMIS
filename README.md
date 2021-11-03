@@ -2,7 +2,9 @@
 <a href="#"><img src="https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg"></a>
 <a href="#"><img src="https://badgen.net/packagist/license/monolog/monolog"></a><br>
 
-Contributor by Krisna Dewa Pratama(1900018336)
+Contributor by Krisna Dewa Pratama(1900018336) <br>
+<a href="#"><img src="https://img.shields.io/badge/<handle>-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white"></a>
+
 
 
 ## Languages 
@@ -14,6 +16,6 @@ Contributor by Krisna Dewa Pratama(1900018336)
 
 ## TOOLS
 
-<a href="#"><img src=""></a>
+<!-- <a href="#"><img src=""></a> -->
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
