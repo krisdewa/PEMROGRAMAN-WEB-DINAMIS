@@ -3,7 +3,7 @@
     $host="localhost";
     $username="root";
     $password="";
-    $databasename="db_akademik";
+    $databasename="akademik";
 
     // Koneksi untuk ke database nya 
     $con = mysqli_connect($host, $username, $password, $databasename);
@@ -14,3 +14,4 @@
     exit();
     }
 ?>
+
