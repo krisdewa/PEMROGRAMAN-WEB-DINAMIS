@@ -3,7 +3,8 @@
 <a href="#"><img src="https://badgen.net/packagist/license/monolog/monolog"></a><br>
 
 Contributor by Krisna Dewa Pratama(1900018336) <br>
-<a href="#"><img src="https://img.shields.io/badge/Krisdewa_-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white"></a>
+<a href="https://www.instagram.com/krisdewa_/"><img src="https://img.shields.io/badge/Krisdewa_-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white"></a>
+
 
 
 
