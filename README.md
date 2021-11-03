@@ -1,7 +1,8 @@
 # PEMROGRAMAN-WEB-DINAMIS
-Contributor by Krisna Dewa Pratama(1900018336)
 <a href="#"><img src="https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg"></a>
-<a href="#"><img src="https://badgen.net/packagist/license/monolog/monolog"></a>
+<a href="#"><img src="https://badgen.net/packagist/license/monolog/monolog"></a><br>
+
+Contributor by Krisna Dewa Pratama(1900018336)
 
 
 ## Languages 
