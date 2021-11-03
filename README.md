@@ -1,5 +1,8 @@
 # PEMROGRAMAN-WEB-DINAMIS
 Contributor by Krisna Dewa Pratama(1900018336)
+<a href="#"><img src="https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg"></a>
+<a href="#"><img src="https://badgen.net/packagist/license/monolog/monolog"></a>
+
 
 ## Languages 
 <a href="#"><img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"></a>
@@ -8,22 +11,6 @@ Contributor by Krisna Dewa Pratama(1900018336)
 <a href="#"><img src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white"></a>
 <a href="#"><img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"></a>
 
+## TOOLS
 
-### List Praktikum Pertemuan 1 <br>
-**Kegiatan dan Postest 1**
-1. Counter <br>
-2. Guestbook <br>
-3. Upload File <br>
-
-### List Praktikum Pertemuan 2 <br>
-**Kegiatan Praktikum 2**
-1. SQL <br>
-2. Query SQL <br>
-
-**Postest Praktikum 2**
-1. SQL <br>
-2. Query SQL <br>
-
-### List Praktikum Pertemuan 3 <br>
-### List Praktikum Pertemuan 4 <br>
-### List Praktikum Pertemuan 5 <br>
+<a href="#"><img src=""></a>
