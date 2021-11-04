@@ -7,6 +7,7 @@ echo "<h2>Tambah User</h2>
         <tr><td>Nama Lengkap</td><td> : <input name='nama_lengkap' type='text'></td></tr>
         <tr><td>Email </td><td> : <input name='email' type='text'></td></tr>
         <tr><td colspan=2><input type='submit' value='SIMPAN'></td></tr>
+        <tr><td><br>Sudah Memiliki akun ? <a href=form_login.php>Login</a></center></td></tr>
     </table>
 </form>";
 ?>
