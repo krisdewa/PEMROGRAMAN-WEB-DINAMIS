@@ -12,6 +12,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <title> Halaman Utama </title>
+    <style>
+        button{
+            margin-left: 10px;
+            margin-bottom: 10px;
+        }
+        td,th {
+            height: 30px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <br>
@@ -43,7 +53,6 @@
                     <a href='delete.php?nim=$user_data[nim]'><button type='button' class='btn btn-danger' >
                         Hapus
                     </button></a></td></tr>";
-
             }
         ?>
     </table>
