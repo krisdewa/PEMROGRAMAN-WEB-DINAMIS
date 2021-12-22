@@ -1,5 +1,5 @@
 <?php
-    $url = "http://localhost/pemrograman-web-dinamis/PRAKTIKUM%20PERTEMUAN%2010/getdatamhs.php";
+    $url = "http://localhost/pemrograman-web-dinamis/PRAKTIKUM%20PERTEMUAN%2010/Kegiatan%2010/getdatamhs.php";
     $client = curl_init($url);
     curl_setopt($client, CURLOPT_RETURNTRANSFER, 1);
     $response = curl_exec($client);
