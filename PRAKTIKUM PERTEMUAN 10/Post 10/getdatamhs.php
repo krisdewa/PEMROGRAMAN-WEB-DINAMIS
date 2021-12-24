@@ -1,15 +1,15 @@
 <?php
-    //Tampilkan data yang didapat
+    //Panggil file untuk koneksi ke database
     require_once "../Kegiatan 10/koneksi.php";
     
     // percabangan jika tidak kosong maka eksekusi
-    if(!empty($_GET['cari']))
-        //tampilkan isi data table mahasiswa dengan nim
+    if(!empty($_GET['cari'])){
+        //tampilkan isi data table mahasiswa dengan nim sesuai isi dari variable cari
         $sql = "SELECT * FROM mahasiswa WHERE nim = '" . $_GET['cari'] . "';";
-    else
+    } else {
         //tampilkan semua data table mahasiswa
         $sql = "SELECT * FROM mahasiswa";
-
+    }
     // Jalankan query
     $query = mysqli_query($con,$sql);
 
